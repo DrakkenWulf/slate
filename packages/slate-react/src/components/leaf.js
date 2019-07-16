@@ -13,6 +13,7 @@ import DATA_ATTRS from '../constants/data-attributes'
  */
 
 const TextString = ({ text = '', isTrailing = false }) => {
+  const glue = text && text.length ? '\uFEFF' : null
   return (
     <span
       {...{
@@ -20,7 +21,7 @@ const TextString = ({ text = '', isTrailing = false }) => {
       }}
     >
       {text}
-      {isTrailing ? '\n' : null}
+      {isTrailing ? '\n' : glue}
     </span>
   )
 }
